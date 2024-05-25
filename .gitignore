@@ -1,0 +1,10 @@
+# planet saturnus
+node_modules
+
+# text editor
+.vscode
+.idea
+
+# script
+env.sh
+script.sh

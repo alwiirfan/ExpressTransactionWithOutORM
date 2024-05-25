@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS `addresses` (
+    id VARCHAR(255) NOT NULL PRIMARY KEY,
+    street VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    province VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS `users` (
+    id VARCHAR(255) NOT NULL PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    address_id VARCHAR(255) NOT NULL,
+    FOREIGN KEY (address_id) REFERENCES address(id)
+) ENGINE=INNODB;
+
+
+DROP TABLE `addresses`;
